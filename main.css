@@ -1,7 +1,7 @@
 #credits {
   position: fixed;
   bottom: 0;
-  width: 101vw;
+  width: 100vw;
   height: 6vh;
   text-align: center;
   background-color: rgb(19, 18, 18);
@@ -11,6 +11,7 @@
 
 body {
   display: flex;
+  align-items: center;
 }
 
 #body2 {
