@@ -1,14 +1,19 @@
-#base {
-  width: 100vw;
-  height: 100vh;
-  background-image: url("./assets/images/mapa ruta venado.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+#credits {
+  position: fixed;
+  bottom: 0;
+  width: 101vw;
+  height: 6vh;
+  text-align: center;
+  background-color: rgb(19, 18, 18);
+  color: rgba(188, 188, 188, 0.881);
+  border-color: aquamarine;
 }
 
+body {
+  display: flex;
+}
 
-map {
-  width: 100%;
-  height: 100%;
+#body2 {
+  height: 340vh;
+  margin: 0;
 }
