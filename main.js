@@ -180,3 +180,41 @@ function escapeHTML(value) {
   });
 
 }
+
+/* =====================================================
+   DROPDOWN FUNCTIONALITY
+===================================================== */
+
+document.querySelectorAll(".dropdown-toggle").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const menuId = button.getAttribute("aria-controls");
+    const menu = document.getElementById(menuId);
+
+    const isOpen = button.getAttribute("aria-expanded") === "true";
+
+    // Close all other dropdowns
+    document.querySelectorAll(".dropdown-toggle").forEach(otherButton => {
+
+      otherButton.setAttribute("aria-expanded", "false");
+
+      const otherMenu = document.getElementById(
+        otherButton.getAttribute("aria-controls")
+      );
+
+      otherMenu.classList.remove("open");
+
+    });
+
+    // Toggle the selected dropdown
+    if (!isOpen) {
+
+      button.setAttribute("aria-expanded", "true");
+      menu.classList.add("open");
+
+    }
+
+  });
+
+});

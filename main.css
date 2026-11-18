@@ -19,7 +19,7 @@
   --logo-area-background: #ffffff;
   --logo-area-height: 110px;
   --logo-area-padding: 20px 30px;
-  --logo-area-alignment: flex-start;
+  /* --logo-area-alignment: flex-start; */
 
   --logo-width: 180px;
   --logo-height: 70px;
@@ -42,7 +42,7 @@
 
   /* LEFT COLUMN */
   --sidebar-width: 300px;
-  --sidebar-background: #f4f4f4;
+  --sidebar-background: #94b97f;
 
   /* MAIN CONTENT */
   --main-background: #ffffff;
@@ -126,7 +126,7 @@ body {
 
   display: flex;
   align-items: center;
-  justify-content: var(--logo-area-alignment);
+  justify-content: center;
 
   background: var(--logo-area-background);
 }
@@ -140,36 +140,118 @@ body {
 }
 
 
+
 /* =====================================================
-   5. EXTERNAL LINKS
+   DROPDOWN LINKS
 ===================================================== */
 
 .links-area {
   width: 100%;
   padding: var(--links-padding);
   background: var(--links-background);
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-
   gap: var(--links-gap);
 }
 
 .link-item {
+  width: 100%;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 6px;
 }
 
-.link-item a {
+/* Main dropdown button */
+
+.dropdown-toggle {
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
   font-family: var(--links-font-family);
   font-size: var(--links-font-size);
   font-weight: var(--links-font-weight);
+  color: var(--links-text-color);
+
+  text-align: left;
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle[aria-expanded="true"] {
+  color: var(--links-hover-color);
+}
+
+/* Dropdown arrow */
+
+.dropdown-arrow {
+  font-size: 13px;
+  transition: transform 0.25s ease;
+}
+
+.dropdown-toggle[aria-expanded="true"] .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Description */
+
+.link-description {
+  font-family: var(--links-font-family);
+  font-size: var(--links-description-size);
+  font-weight: var(--links-description-weight);
+  color: var(--links-description-color);
+  line-height: 1.5;
+}
+
+/* Dropdown content */
+
+.dropdown-menu {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  padding-left: 14px;
+  margin-top: 5px;
+
+  border-left: 2px solid var(--info-title-accent);
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+
+  transition:
+    max-height 0.3s ease,
+    opacity 0.25s ease,
+    margin 0.3s ease;
+}
+
+.dropdown-menu.open {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 10px;
+}
+
+/* Sub-links */
+
+.dropdown-menu a {
+  font-family: var(--links-font-family);
+  font-size: 24px;
+  font-weight: 400;
 
   color: var(--links-text-color);
   text-decoration: none;
@@ -177,18 +259,43 @@ body {
   transition: color 0.2s ease;
 }
 
-.link-item a:hover {
+.dropdown-menu a:hover {
   color: var(--links-hover-color);
 }
 
-.link-item span {
-  font-family: var(--links-font-family);
-  font-size: var(--links-description-size);
-  font-weight: var(--links-description-weight);
+/* Keyboard accessibility */
 
-  color: var(--links-description-color);
-  line-height: 1.5;
+.dropdown-toggle:focus-visible,
+.dropdown-menu a:focus-visible {
+  outline: 2px solid var(--links-hover-color);
+  outline-offset: 4px;
 }
+
+
+/* Mobile adjustments */
+
+@media (max-width: 900px) {
+
+  .links-area {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+  }
+
+  .link-item {
+    width: 100%;
+  }
+
+  .dropdown-toggle {
+    font-size: 18px;
+  }
+
+  .link-description {
+    font-size: 11px;
+  }
+
+}
+
 
 
 /* =====================================================
@@ -284,7 +391,7 @@ body {
 }
 
 .map-point.active {
-  animation: markerPulse 0.5s ease;
+  animation: markerPulse 0.1s ease;
 }
 
 @keyframes markerPulse {
@@ -464,7 +571,7 @@ body {
   }
 
   .link-item a {
-    font-size: 40px;
+    font-size: 24px;
   }
 
   .link-item span {
@@ -528,4 +635,26 @@ body {
     transition: none !important;
   }
 
+}
+
+/* =====================================================
+   15. MISC
+===================================================== */
+
+.right-side-title {
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+  font-family: Georgia;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.right-side-info {
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+  font-family: Georgia;
+  font-weight: normal;
+  font-size: 20px;
 }
