@@ -114,6 +114,8 @@ body {
   background: var(--sidebar-background);
   display: flex;
   flex-direction: column;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
 }
 
 
@@ -149,12 +151,13 @@ body {
   width: 100%;
   padding: var(--links-padding);
   background: var(--links-background);
-
+border-top-right-radius: 50px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--links-gap);
+  
 }
 
 .link-item {
@@ -554,6 +557,7 @@ body {
   .sidebar {
     width: 100%;
     flex: none;
+    
   }
 
   .logo-area {
@@ -567,7 +571,7 @@ body {
     flex-wrap: wrap;
     gap: 22px;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 50px;
   }
 
   .link-item a {
@@ -613,6 +617,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 18px;
+    
   }
 
 }
@@ -658,3 +663,53 @@ body {
   font-weight: normal;
   font-size: 20px;
 }
+
+/* 
+HERO IMAGE  */
+
+  .hero-header {
+    width: 100%;
+    height: 500px;
+    background-image: url(assets/images/plaza.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-overlay {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.55)
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+
+  .hero-content {
+    color: white;
+    max-width: 800px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(36px, 6vw, 72px);
+    margin: 0 0 16px;
+    font-weight: 700;
+  }
+
+  .hero-content p {
+    font-size: clamp(16px, 2vw, 22px);
+    margin: 0;
+  }
+
+  @media (max-width: 600px) {
+    .hero-header {
+      height: 350px;
+    }
+  }

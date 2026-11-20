@@ -1,208 +1,148 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Interactive Map</title>
-<link rel="stylesheet" href="main.css">
-<link rel="script" href="main.js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Map</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="script" href="main.js" />
+  </head>
 
-</head>
+  <body>
+    <header class="logo-area">
+      <img src="assets/images/escudo2.png" alt="Website logo" />
+    </header>
 
-
-<body>
-
-
-<!-- =====================================================
+    <div class="hero-header">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1>Ruta del Venado de Algar</h1>
+          <p>Lorem Ipsum.</p>
+        </div>
+      </div>
+    </div>
+    <!-- =====================================================
      15. COMPLETE PAGE LAYOUT
 ===================================================== -->
 
-<div class="page-layout">
-
-
-  <!-- ===============================================
+    <div class="page-layout">
+      <!-- ===============================================
        LEFT SIDEBAR
   ================================================ -->
 
-  <aside class="sidebar">
+      <aside class="sidebar">
+        <!-- LOGO -->
 
+        <!-- EXTERNAL LINKS -->
 
-    <!-- LOGO -->
+        <nav class="links-area">
+          <!-- WEBSITE -->
+          <div class="link-item">
+            <button
+              class="dropdown-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="dropdown-website"
+            >
+              Etapas
 
-    <header class="logo-area">
+              <span class="dropdown-arrow">▼</span>
+            </button>
 
-      <img
-        src="assets/images/escudo2.png"
-        alt="Website logo"
-      >
+            <span class="link-description">
+              Información sobre las diferentes etapas.
+            </span>
 
-    </header>
+            <div class="dropdown-menu" id="dropdown-website">
+              <a href="/etapa-1/"> Etapa 1 </a>
 
+              <a href="/etapa-2/"> Etapa 2 </a>
 
-    <!-- EXTERNAL LINKS -->
+              <a href="/etapa-3/"> Etapa 3 </a>
+            </div>
+          </div>
 
-    
-<nav class="links-area">
+          <!-- ABOUT -->
+          <div class="link-item">
+            <button
+              class="dropdown-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="dropdown-about"
+            >
+              Comparte.
 
-  <!-- WEBSITE -->
-  <div class="link-item">
+              <span class="dropdown-arrow">▼</span>
+            </button>
 
-    <button class="dropdown-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="dropdown-website">
+            <span class="link-description"> Ponte en contacto. </span>
 
-      Etapas
+            <div class="dropdown-menu" id="dropdown-about">
+              <a href="https://example.com/our-story"> Sugiere </a>
 
-      <span class="dropdown-arrow">▼</span>
+              <a href="https://example.com/team"> Comparte </a>
+            </div>
+          </div>
+        </nav>
+      </aside>
 
-    </button>
-
-    <span class="link-description">
-      Información sobre las diferentes etapas.
-    </span>
-
-    <div class="dropdown-menu" id="dropdown-website">
-
-      <a href="/etapa-1/">
-        Etapa 1
-      </a>
-
-      <a href="/etapa-2/">
-        Etapa 2
-      </a>
-      
-      <a href="/etapa-3/">
-        Etapa 3
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <!-- ABOUT -->
-  <div class="link-item">
-
-    <button class="dropdown-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="dropdown-about">
-
-      Comparte.
-
-      <span class="dropdown-arrow">▼</span>
-
-    </button>
-
-    <span class="link-description">
-      Ponte en contacto.
-    </span>
-
-    <div class="dropdown-menu" id="dropdown-about">
-
-      <a href="https://example.com/our-story">
-        Sugiere
-      </a>
-
-      <a href="https://example.com/team">
-        Comparte
-      </a>
-
-    </div>
-
-  </div>
-
-
-
-
-
-</nav>
-
-
-  </aside>
-
-
-
-  <!-- ===============================================
+      <!-- ===============================================
        RIGHT MAIN CONTENT
   ================================================ -->
 
-  <main class="main-content">
+      <main class="main-content">
+        <div class="right-side-title">
+          <p>Bienvenidos a la Ruta del Venado de Algar</p>
 
-    <div class="right-side-title">
-      <p>Bienvenidos a la Ruta del Venado de Algar</p>
-
-      <div class="right-side-info">
-
-        <p>fdlsfkdajkl</p>
-      </div>
-
-    </div>
-
-
-    <div class="map-layout">
-
-
-      <!-- INTERACTIVE MAP -->
-
-      <div class="map-container">
-
-        <div class="map-wrapper" id="mapWrapper">
-
-          <img
-            src="assets/images/mapa ruta venado43.png"
-            alt="Interactive map"
-          >
-
-          <!-- Markers generated by JavaScript -->
-
+          <div class="right-side-info">
+            <p>
+              Ven a conocer la ruta turística del Venado de Algar, en la que
+              podrás experimentar la vida, desarrollo y reproducción del venado.
+              Visita nuestro pueblo, un paisaje dominado por alcornocales,
+              matorral mediterráneo y manchas agrícolas tradicionales.
+            </p>
+          </div>
         </div>
 
-      </div>
+        <div class="map-layout">
+          <!-- INTERACTIVE MAP -->
 
+          <div class="map-container">
+            <div class="map-wrapper" id="mapWrapper">
+              <img
+                src="assets/images/mapa ruta venado43.png"
+                alt="Interactive map"
+              />
 
-      <!-- INFORMATION PANEL -->
+              <!-- Markers generated by JavaScript -->
+            </div>
+          </div>
 
-      <aside
-        class="info-panel"
-        id="infoPanel"
-        aria-live="polite"
-        aria-atomic="true"
-      >
+          <!-- INFORMATION PANEL -->
 
-        <h2>Explora el mapa</h2>
+          <aside
+            class="info-panel"
+            id="infoPanel"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <h2>Explora el mapa</h2>
 
-        <p>
-          Toca o pasa el ratón por un punto para 
-          ver más información.
-        </p>
-
-      </aside>
-
-
+            <p>Toca o pasa el ratón por un punto para ver más información.</p>
+          </aside>
+        </div>
+      </main>
     </div>
 
-  </main>
+    <div id="body2"></div>
+    <div id="credits">
+      <p>Página web desarrollada por Pablo Gálvez y Yeray Romero</p>
+    </div>
 
-</div>
-
-<div id="body2">
-  </div>
-  <div id="credits">
-    <p>Página web desarrollada por Pablo Gálvez y Yeray Romero</p>
-  </div>
-
-
-
-<!-- =====================================================
+    <!-- =====================================================
      16. JAVASCRIPT
 ===================================================== -->
 
-<script src="main.js"></script>
-
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>
-
-
